@@ -15,6 +15,7 @@ server.use(restify.bodyParser());
 server.get('/:id', document.get);
 server.post('/:id', document.post);
 server.patch('/:id', document.post);
+server.del('/:id', document.del);
 
 
 module.exports = server;

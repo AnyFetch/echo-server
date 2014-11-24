@@ -3,6 +3,7 @@
 var restify = require('restify');
 var document = require('./lib/handlers/document.js');
 
+
 var server = restify.createServer({
   name: 'echo-server',
   version: '1.0.0',

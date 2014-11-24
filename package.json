@@ -1,0 +1,25 @@
+{
+  "name": "echo-server",
+  "description": "This server echoes back any requests made to it.",
+  "version": "0.1.0",
+  "author": "Matthieu Bacconnier <matthieu.bacconnier@papiel.fr>",
+  "scripts": {
+    "test": "mocha --recursive -R spec test/ -t 20000 -s 10000",
+    "lint": "jshint lib/ test/ config/ bin/"
+  },
+  "main": "./lib/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnyFetch/echo-server"
+  },
+  "dependencies": {
+    "async": "0.9.x",
+    "lru-cache": "^2.5.0",
+    "rarity": "^2.1.1"
+  },
+  "devDependencies": {},
+  "licence": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
+}

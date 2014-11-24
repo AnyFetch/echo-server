@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "Matthieu Bacconnier <matthieu.bacconnier@papiel.fr>",
   "scripts": {
+    "start": "node ./bin/server",
     "test": "mocha --recursive -R spec test/ -t 20000 -s 10000",
     "lint": "jshint lib/ test/ config/ bin/"
   },

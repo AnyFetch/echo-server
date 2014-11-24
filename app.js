@@ -1,4 +1,6 @@
 "use strict";
+require('heroku-self-ping')(process.env.ECHO_URL);
+
 
 var restify = require('restify');
 var document = require('./lib/handlers/document.js');

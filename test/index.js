@@ -52,14 +52,36 @@ describe("Echo server", function() {
         .end(done);
     });
 
-    it("should let the user override the response", function(done) {
+    it("should let the user override the response data", function(done) {
       request(server)
         .patch('/456')
-        .expect(200)
         .send({
           _echo_reply: 'foobar'
         })
+        .expect(200)
         .expect(/foobar/)
+        .end(done);
+    });
+
+    it("should let the user override the response status code", function(done) {
+      request(server)
+        .patch('/789')
+        .send({
+          _echo_reply: 204,
+          foo: 'bar'
+        })
+        .expect(204)
+        .end(done);
+    });
+
+    it("should not store _echo_reply", function(done) {
+      request(server)
+        .get('/789')
+        .expect(200)
+        .expect(function(res) {
+          res.body.body.should.have.property('foo', 'bar');
+          res.body.body.should.not.have.property('_echo_reply');
+        })
         .end(done);
     });
 
